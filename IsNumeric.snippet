@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+<CodeSnippet Format="1.0.0">
+<Header>
+<Title>IsNumeric</Title>
+<Author>Morteza Sahragard www.30sharp.com</Author>
+<Description>Inserts an IsNumeric function.</Description>
+<Shortcut>IsNumeric</Shortcut>
+<SnippetTypes>
+<SnippetType>Expansion</SnippetType>
+</SnippetTypes>
+</Header>
+  <Snippet>
+    <Code Language="csharp">
+  <![CDATA[
+/// <summary>
+/// Return False If obj Is Not Number Else Return True. www.30sharp.com
+/// </summary>
+/// <param name="str"></param>
+/// <returns>bool</returns>
+public static bool IsNumeric(object obj)
+{
+if (obj == null || obj.ToString().Trim() == String.Empty)
+{
+return false;
+}
+string str=obj.ToString().Trim();
+for(int i=0;i<str.Length;i++)
+{
+if (str[0] == '-' || str[0] == '+')
+{
+continue;
+}
+if (Char.IsNumber(str[i]) == false)
+{
+return false;
+}
+}
+return true;
+}]]>
+    </Code>
+  </Snippet>
+  
+</CodeSnippet>
+</CodeSnippets>
